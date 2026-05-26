@@ -4,7 +4,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import AddTaskForm from './components/AddTaskForm';
 import Task from './components/Task';
 import axios from 'axios';
-import { useState } from 'react';
+import { API_URL } from './utils';
+
 
 const darkTheme = createTheme({
   palette: {
@@ -13,7 +14,7 @@ const darkTheme = createTheme({
 });
 
 export default function App() {
-  const [task, setTask] = useState([]);
+  const [task, setTasks] = useState([]);
 
   const fetchTasks = async () => {
     try {
@@ -33,7 +34,7 @@ export default function App() {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <AddTaskForm fetchTasks={fetchTasks}/>
-      {tasks.map((task) => {
+      {task.map((task) => {
         return <Task task={task} key={task.id} fetchTasks={fetchTasks} />;
       })}
     </ThemeProvider>

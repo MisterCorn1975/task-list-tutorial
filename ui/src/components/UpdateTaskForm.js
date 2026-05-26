@@ -4,8 +4,10 @@ import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react'
 import CheckIcon from '@mui/icons-material/Check';
+import { API_URL } from '../utils';
+import axios from 'axios';
 
-const UpdateTaskForm = ({
+export const UpdateTaskForm = ({
     fetchTasks,
     isDialogOpen, 
     setIsDialogOpen, 
@@ -53,4 +55,4 @@ const UpdateTaskForm = ({
     )
 }
 
-export default UpdateTaskForm
+export default UpdateTaskForm;
