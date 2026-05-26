@@ -21,7 +21,7 @@ app.get('/task', async(req, res) => {
     res.send(tasks.Items);
   } 
   catch (error) {
-    res.status(400).send('Error fetching tasks: ${err}');
+    res.status(400).send('Error fetching tasks: ${error}');
   }
 });
 
@@ -31,7 +31,7 @@ app.post('/task', async(req, res) => {
     res.send(response.Item);
   } 
   catch (error) {
-    res.status(400).send('Error creating task: ${err}');
+    res.status(400).send('Error creating task: ${error}');
   }
 });
 
@@ -41,7 +41,7 @@ app.put('/task', async(req, res) => {
     res.send(tasks.Items);
   } 
   catch (error) {
-    res.status(400).send('Error updating tasks: ${err}');
+    res.status(400).send('Error updating tasks: ${error}');
   }
 });
 
@@ -51,7 +51,7 @@ app.delete('/task/:id', async(req, res) => {
     res.send(tasks.Items);
   } 
   catch (error) {
-    res.status(400).send('Error deleting task: ${err}');
+    res.status(400).send('Error deleting task: ${error}');
   }
 });
 
